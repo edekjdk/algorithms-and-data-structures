@@ -126,5 +126,7 @@ dict_plan = {}
 for i in plan:
     dict_plan[i.subject] = i
 
-print(dict_plan)
+
+for k, v in dict_plan.items():
+    print(k, v.time)
 
