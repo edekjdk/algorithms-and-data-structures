@@ -48,9 +48,12 @@ print("-" * 15, "LAB", "-" * 15)
 
 import random
 
-list_1 = [random.randint(0, 10000) for x in range(10000)]
+list_1 = [random.randint(0, 100000) for x in range(10000)]
 list_2 = list_1.copy()
 list_3 = list_1.copy()
+list_4 = list_1.copy()
+list_5 = list_1.copy()
+list_6 = list_1.copy()
 
 def xd(arr):
     for i in range(len(arr)):
@@ -60,9 +63,9 @@ def xd(arr):
 
 
 
-start = time.time()
-xd(list_3)
-stop = time.time()
+start1 = time.time()
+# xd(list_4)
+stop1 = time.time()
 
 
 def bubble_sort_not_optimalized(arr):
@@ -76,9 +79,9 @@ def bubble_sort_not_optimalized(arr):
                 is_change = True
 
 
-start = time.time()
-bubble_sort_not_optimalized(list_1)
-stop = time.time()
+start2 = time.time()
+# bubble_sort_not_optimalized(list_5)
+stop2 = time.time()
 
 
 
@@ -95,15 +98,15 @@ def bubble_sort_optimalized(arr):
         if not is_change:
             break
 
-start = time.time()
-bubble_sort_optimalized(list_2)
-stop = time.time()
+start3 = time.time()
+# bubble_sort_optimalized(list_6)
+stop3 = time.time()
 
 
 
 import timeit
 
-print(timeit.timeit("xd(list_3.copy())", globals=globals(), number=1))
-print(timeit.timeit("bubble_sort_not_optimalized(list_1.copy())", globals=globals(), number=1))
-print(timeit.timeit("bubble_sort_optimalized(list_2.copy())", globals=globals(), number=1))
+print(timeit.timeit("xd(list_3)", globals=globals(), number=1))
+print(timeit.timeit("bubble_sort_not_optimalized(list_1)", globals=globals(), number=1))
+print(timeit.timeit("bubble_sort_optimalized(list_2)", globals=globals(), number=1))
 
