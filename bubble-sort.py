@@ -55,12 +55,12 @@ list_4 = list_1.copy()
 list_5 = list_1.copy()
 list_6 = list_1.copy()
 
+
 def xd(arr):
     for i in range(len(arr)):
-        for j in range(0, len(arr) - i -1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-
+        for j in range(0, len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
 
 start1 = time.time()
@@ -84,7 +84,6 @@ start2 = time.time()
 stop2 = time.time()
 
 
-
 def bubble_sort_optimalized(arr):
     max_index = len(arr) - 1
 
@@ -98,15 +97,28 @@ def bubble_sort_optimalized(arr):
         if not is_change:
             break
 
+
 start3 = time.time()
 # bubble_sort_optimalized(list_6)
 stop3 = time.time()
-
-
 
 import timeit
 
 print(timeit.timeit("xd(list_3)", globals=globals(), number=1))
 print(timeit.timeit("bubble_sort_not_optimalized(list_1)", globals=globals(), number=1))
 print(timeit.timeit("bubble_sort_optimalized(list_2)", globals=globals(), number=1))
+
+
+def test_bubble_sort(list):
+    max_index = len(list) - 1
+    for i in range(max_index, 0 , -1):
+        is_changing = False
+        for j in range(i):
+            if list[j] > list[j+1]:
+                list[j], list[j+1] = list[j+1], list[j]
+                is_changing = True
+        if not is_changing:
+            break
+
+
 
